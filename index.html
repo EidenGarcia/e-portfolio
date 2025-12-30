@@ -8,7 +8,6 @@
 </head>
 
 <body>
-  <!-- Skip link (accessibility) -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
@@ -17,7 +16,6 @@
         <span class="brand-title">Eiden Garcia ePortfolio</span>
       </a>
 
-      <!-- Mobile menu toggle (CSS-only) -->
       <input class="nav-toggle" type="checkbox" id="nav-toggle" />
       <label class="nav-toggle-label" for="nav-toggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -27,7 +25,6 @@
         <a class="nav-link is-active" href="index.html">About Me</a>
         <a class="nav-link" href="education.html">Education</a>
 
-        <!-- Experience dropdown (CSS-only via <details>) -->
         <details class="nav-details">
           <summary class="nav-link">Experience</summary>
           <div class="nav-dropdown" role="menu">
@@ -51,7 +48,7 @@
     <section class="card hero">
       <div class="hero-grid">
         <figure class="profile">
-          <!-- Put your image at: assets/profile.jpg -->
+          <!-- UPDATED: JPG -->
           <img src="assets/profile.jpg" alt="Portrait of Eiden O. Garcia Torres" />
         </figure>
 
@@ -61,24 +58,13 @@
           <p>
             My work focuses on improving grid reliability, automation, and resilience across Puerto Rico by combining
             field execution with data-driven engineering. I support the commissioning and optimization of Grid Automation
-            devices (e.g., reclosers and communicating fault current indicators) and develop analytical workflows using
-            Synergi Electric, Power BI, Python, and GIS to evaluate performance, quantify reliability impacts
-            (CMI/SAIDI/SAIFI), and inform cost-benefit decisions for targeted investments.
-          </p>
-
-          <p>
-            I’m especially interested in bridging field operations, protection coordination, and analytics to deliver
-            practical solutions that improve customer outcomes and strengthen system performance.
+            devices and develop analytical workflows using Synergi Electric, Power BI, Python, and GIS to evaluate performance,
+            quantify reliability impacts (CMI/SAIDI/SAIFI), and inform cost-benefit decisions.
           </p>
 
           <div class="cta-row">
-            <!-- Put your PDF at: assets/resume.pdf -->
-            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">
-              Resume (PDF)
-            </a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">
-              LinkedIn
-            </a>
+            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -97,7 +83,6 @@
     </footer>
   </main>
 
-  <!-- tiny optional helper (remove if you want zero JS) -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
