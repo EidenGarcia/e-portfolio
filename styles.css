@@ -366,3 +366,66 @@ a:hover{ text-decoration: underline; }
     gap: 22px;
   }
 }
+/* ===== Experience page only ===== */
+.exp-page .exp-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 12px;
+}
+
+/* each card uses the same glass vibe */
+.exp-page .exp-card{
+  background: rgba(12, 26, 34, 0.55);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.exp-page .exp-img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.exp-page .exp-body{
+  padding: 18px;
+}
+
+.exp-page .exp-title{
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.15;
+  color: rgba(255,255,255,0.92);
+}
+
+.exp-page .exp-meta{
+  margin: 0 0 14px;
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+}
+
+.exp-page .exp-list{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,0.86);
+}
+
+.exp-page .exp-list li{
+  margin: 0 0 10px;
+  line-height: 1.45;
+}
+/* EXPERIENCE PROFESIONAL */
+/* Responsive: 2 columns then 1 column */
+@media (max-width: 1050px){
+  .exp-page .exp-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px){
+  .exp-page .exp-grid{ grid-template-columns: 1fr; }
+}
