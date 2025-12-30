@@ -1,33 +1,22 @@
-/* =========================
-   Eiden Portfolio — styles.css
-   (Full updated file)
-   ========================= */
-
-/* ---------- Theme ---------- */
 :root{
-  /* Text */
   --ink: rgba(255,255,255,0.92);
   --muted: rgba(255,255,255,0.72);
 
-  /* Palette (from your bg) */
   --deep: #092633;
   --teal: #155b5e;
   --green: #2d9b67;
   --lime: #a4db57;
   --highlight: #e5f470;
 
-  /* Surfaces */
   --glass: rgba(255,255,255,0.07);
   --glass-border: rgba(255,255,255,0.12);
   --shadow: 0 18px 50px rgba(0,0,0,0.35);
 
-  /* Layout */
   --radius: 18px;
   --maxw: 1040px;
   --header-h: 64px;
 }
 
-/* ---------- Base ---------- */
 *{ box-sizing: border-box; }
 html, body{ height: 100%; }
 
@@ -37,20 +26,19 @@ body{
   color: var(--ink);
   line-height: 1.55;
 
-  /* Your polygon background + readability overlay */
+  /* UPDATED: JPG */
   background-image:
     linear-gradient(rgba(9,38,51,0.72), rgba(9,38,51,0.72)),
-    url("assets/bg.png");
+    url("assets/bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* remove if it feels laggy on mobile */
+  background-attachment: fixed;
 }
 
 a{ color: var(--ink); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
-/* Skip link (accessibility) */
 .skip-link{
   position:absolute;
   left:-999px;
@@ -63,13 +51,11 @@ a:hover{ text-decoration: underline; }
 }
 .skip-link:focus{ left: 12px; }
 
-/* ---------- Header / Nav ---------- */
 .site-header{
   position: sticky;
   top: 0;
   z-index: 100;
   height: var(--header-h);
-
   background: rgba(9,38,51,0.70);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.10);
@@ -96,7 +82,6 @@ a:hover{ text-decoration: underline; }
   letter-spacing: 0.2px;
 }
 
-/* Desktop nav */
 .nav{
   margin-left: auto;
   display:flex;
@@ -125,7 +110,6 @@ a:hover{ text-decoration: underline; }
   border: 1px solid rgba(255,255,255,0.12);
 }
 
-/* Experience dropdown (CSS-only via <details>) */
 .nav-details{ position: relative; }
 .nav-details > summary{
   list-style: none;
@@ -157,7 +141,6 @@ a:hover{ text-decoration: underline; }
 }
 .nav-details:not([open]) .nav-dropdown{ display:none; }
 
-/* Mobile nav toggle (CSS-only) */
 .nav-toggle{ display:none; }
 .nav-toggle-label{
   display:none;
@@ -180,7 +163,6 @@ a:hover{ text-decoration: underline; }
   border-radius: 999px;
 }
 
-/* ---------- Layout ---------- */
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
@@ -194,7 +176,6 @@ a:hover{ text-decoration: underline; }
   letter-spacing: -0.4px;
 }
 
-/* ---------- Cards / Sections ---------- */
 .card{
   background: var(--glass);
   border: 1px solid var(--glass-border);
@@ -213,7 +194,6 @@ a:hover{ text-decoration: underline; }
   color: var(--muted);
 }
 
-/* ---------- Hero (About Me) ---------- */
 .hero-grid{
   display:grid;
   grid-template-columns: 220px 1fr;
@@ -221,7 +201,6 @@ a:hover{ text-decoration: underline; }
   align-items: start;
 }
 
-/* Profile photo */
 .profile{
   margin: 0;
   display:flex;
@@ -239,13 +218,11 @@ a:hover{ text-decoration: underline; }
   background: rgba(255,255,255,0.04);
 }
 
-/* Text */
 .hero-content p{
   margin: 0 0 12px;
   color: rgba(255,255,255,0.86);
 }
 
-/* ---------- Buttons ---------- */
 .cta-row{
   display:flex;
   flex-wrap: wrap;
@@ -260,7 +237,6 @@ a:hover{ text-decoration: underline; }
   padding: 10px 14px;
   border-radius: 14px;
 
-  /* Lime accent */
   background: rgba(229,244,112,0.14);
   border: 1px solid rgba(229,244,112,0.28);
   color: var(--ink);
@@ -284,7 +260,6 @@ a:hover{ text-decoration: underline; }
   background: rgba(255,255,255,0.06);
 }
 
-/* ---------- Lists ---------- */
 .contact-list{
   margin: 0;
   padding-left: 18px;
@@ -295,14 +270,12 @@ a:hover{ text-decoration: underline; }
   margin-right: 8px;
 }
 
-/* ---------- Footer ---------- */
 .footer{
   margin-top: 24px;
   padding: 10px 2px;
   color: var(--muted);
 }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 860px){
   .nav-toggle-label{ display:flex; }
 
@@ -338,19 +311,12 @@ a:hover{ text-decoration: underline; }
 
   .nav-toggle:checked ~ .nav{ display:flex; }
 
-  .hero-grid{
-    grid-template-columns: 1fr;
-  }
+  .hero-grid{ grid-template-columns: 1fr; }
 
-  .profile{
-    justify-content: flex-start;
-  }
+  .profile{ justify-content: flex-start; }
+  .profile img{ width: 200px; height: 200px; }
 
-  .profile img{
-    width: 200px;
-    height: 200px;
-  }
-
-  /* Mobile performance: optional (uncomment if needed) */
-  /* body{ background-attachment: scroll; } */
+  /* If mobile feels laggy, uncomment:
+  body{ background-attachment: scroll; }
+  */
 }
