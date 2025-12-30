@@ -200,7 +200,7 @@ a:hover{ text-decoration: underline; }
   height: 100%;
   object-fit: cover;          /* fills circle, crops edges */
   object-position: 50% 35%;   /* move face up/down (second %) */
-  transform: scale(1.25);     /* zoom in/out */
+  transform: scale(1.5);     /* zoom in/out */
   transform-origin: center;
   display: block;
 }
