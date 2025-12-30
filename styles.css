@@ -19,9 +19,9 @@ body{
   color: var(--ink);
   line-height: 1.55;
 
-  /* Background image + LIGHT overlay so it shows */
+  /* Background image + lighter overlay so the polygon shows */
   background:
-    linear-gradient(rgba(9,38,51,0.35), rgba(9,38,51,0.55)),
+    linear-gradient(rgba(9,38,51,0.30), rgba(9,38,51,0.55)),
     url("assets/bg.jpg");
   background-size: cover;
   background-position: center;
@@ -123,6 +123,7 @@ a:hover{ text-decoration: underline; }
 }
 .nav-details:not([open]) .nav-dropdown{ display:none; }
 
+/* Mobile toggle */
 .nav-toggle{ display:none; }
 .nav-toggle-label{
   display:none;
@@ -178,12 +179,12 @@ a:hover{ text-decoration: underline; }
 
 .hero-grid{
   display:grid;
-  grid-template-columns: 260px 1fr; /* a bit wider for the photo */
+  grid-template-columns: 280px 1fr;
   gap: 22px;
   align-items: start;
 }
 
-/* FIX: photo fills the circle */
+/* PROFILE CIRCLE (works) */
 .profile{
   width: 240px;
   height: 240px;
@@ -199,8 +200,9 @@ a:hover{ text-decoration: underline; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 35%;
-  transform: scale(2);
+  object-position: 50% 35%; /* move face up/down */
+  transform: scale(1.5);   /* zoom */
+  transform-origin: center;
   display: block;
 }
 
