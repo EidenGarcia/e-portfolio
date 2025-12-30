@@ -201,7 +201,7 @@ a:hover{ text-decoration: underline; }
   height: 100%;
   object-fit: cover;
   object-position: 50% 35%; /* move face up/down */
-  transform: scale(1.5);   /* zoom */
+  transform: scale(2);   /* zoom */
   transform-origin: center;
   display: block;
 }
