@@ -366,27 +366,39 @@ a:hover{ text-decoration: underline; }
     gap: 22px;
   }
 }
-/* ===== Experience page only ===== */
+/* ===== Dropdown active state ===== */
+.nav-dropdown-link.is-active{
+  color: var(--ink);
+  background: rgba(255,255,255,0.06);
+  text-decoration: none;
+}
+
+/* Make the summary behave like your other nav links */
+.nav-details > summary.nav-link{
+  list-style: none;
+}
+.nav-details > summary.nav-link::-webkit-details-marker{ display:none; }
+
+/* ===== Experience page (glass + horizontal columns) ===== */
 .exp-page .exp-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 12px;
+  margin-top: 0; /* because it's inside .card */
 }
 
-/* each card uses the same glass vibe */
+/* Each experience card uses same vibe but inside the glass wrapper */
 .exp-page .exp-card{
-  background: rgba(12, 26, 34, 0.55);
+  background: rgba(12, 26, 34, 0.25);
   border: 1px solid rgba(255,255,255,0.10);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(12px);
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
 
+/* One photo (no carousel) */
 .exp-page .exp-img{
   width: 100%;
   height: 190px;
@@ -394,6 +406,7 @@ a:hover{ text-decoration: underline; }
   display: block;
 }
 
+/* Text area */
 .exp-page .exp-body{
   padding: 18px;
 }
@@ -421,8 +434,8 @@ a:hover{ text-decoration: underline; }
   margin: 0 0 10px;
   line-height: 1.45;
 }
-/* EXPERIENCE PROFESIONAL */
-/* Responsive: 2 columns then 1 column */
+
+/* Responsive */
 @media (max-width: 1050px){
   .exp-page .exp-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
