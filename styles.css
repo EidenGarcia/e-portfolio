@@ -432,3 +432,67 @@ a:hover{ text-decoration: underline; }
 @media (max-width: 700px){
   .exp-page .exp-grid{ grid-template-columns: 1fr; }
 }
+/* ===== Publications page ===== */
+.pub-page .pub-item{
+  background: rgba(12, 26, 34, 0.25);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.pub-page .pub-grid{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.pub-page .pub-title{
+  margin: 0 0 12px;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.pub-page .pub-meta{
+  margin: 0 0 14px;
+  color: rgba(255,255,255,0.82);
+}
+
+.pub-page .pub-block{ margin-top: 14px; }
+
+.pub-page .pub-label{
+  margin: 0 0 8px;
+  color: rgba(255,255,255,0.86);
+}
+
+.pub-page .pub-text{
+  margin: 0;
+  color: rgba(255,255,255,0.82);
+}
+
+.pub-page .pub-list{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,0.82);
+}
+
+.pub-page .pub-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pub-page .pub-cover{
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+}
+
+@media (max-width: 900px){
+  .pub-page .pub-grid{ grid-template-columns: 1fr; }
+}
