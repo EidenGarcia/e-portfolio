@@ -10,6 +10,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html">
@@ -22,8 +24,9 @@
 
         <!-- Experience dropdown -->
         <details class="nav-details">
-          <summary class="nav-link is-active">Experience ▾</summary>
-          <div class="nav-dropdown">
+          <summary class="nav-link is-active">Experience</summary>
+
+          <div class="nav-dropdown" role="menu" aria-label="Experience submenu">
             <a class="nav-dropdown-link" href="experience-professional.html">Professional</a>
             <a class="nav-dropdown-link" href="experience-academic.html">Academic</a>
             <a class="nav-dropdown-link is-active" href="experience-publications.html">Publications</a>
@@ -37,28 +40,29 @@
     </div>
   </header>
 
-  <main class="container pub-page">
+  <main id="main" class="container pub-page">
     <section class="page-head">
       <h1 class="page-title">Publications</h1>
     </section>
 
-    <!-- Glass wrapper -->
     <section class="card">
-      <!-- 2-column publication layout -->
       <article class="pub-item">
         <div class="pub-grid">
-          <!-- LEFT: text -->
+
+          <!-- LEFT -->
           <div class="pub-left">
             <h2 class="pub-title">
               Emergency Shelter and Connectivity for Rural Communities After Natural Disasters: A Case Study
             </h2>
 
-            <p class="pub-meta">
-              <strong>Authors:</strong> Josué A. Dieppa Ortiz; Carla López del Puerto; Génesis P. Acevedo Guzmán; <strong>Eiden O. García Torres</strong>; Humberto E. Cavallin Calanche; Daniel Rodríguez Román; Fabio Andrade Rengifo
+            <p class="pub-authors">
+              <strong>Authors:</strong>
+              Josué A. Dieppa Ortiz; Carla López del Puerto; Génesis P. Acevedo Guzmán; <strong>Eiden O. García Torres</strong>;
+              Humberto E. Cavallin Calanche; Daniel Rodríguez Román; Fabio Andrade Rengifo
             </p>
 
             <div class="pub-block">
-              <p class="pub-label"><strong>Affiliations</strong></p>
+              <p class="pub-label"><strong>Affiliations:</strong></p>
               <ul class="pub-list">
                 <li>Civil Engineering and Surveying Department, University of Puerto Rico, Mayagüez, Puerto Rico</li>
                 <li>Electrical and Computer Engineering Department, University of Puerto Rico, Mayagüez, Puerto Rico</li>
@@ -67,29 +71,77 @@
             </div>
 
             <div class="pub-block">
-              <p class="pub-label"><strong>Contribution</strong></p>
+              <p class="pub-label"><strong>Contribution:</strong></p>
               <p class="pub-text">
                 Led the design and analysis of the <strong>Photovoltaic Energetic System</strong> integrated into the modular emergency shelter.
-                This included assessing solar irradiation data, determining system sizing for off-grid operation, and evaluating the shelter’s capacity
-                to provide reliable and sustainable energy during post-disaster conditions.
+                This included assessing solar irradiation data, determining system sizing for off-grid operation, and evaluating the shelter’s
+                capacity to provide reliable and sustainable energy during post-disaster conditions.
               </p>
             </div>
 
+            <!-- BUTTONS (NO POSTER) -->
             <div class="pub-actions">
-              <a class="btn" href="../assets/publications/monarca-paper.pdf" target="_blank" rel="noopener">Download Paper (PDF)</a>
-              <a class="btn btn-ghost" href="../assets/publications/monarca-presentation.pdf" target="_blank" rel="noopener">Download Presentation (PDF)</a>
+              <!-- Local PDF in assets (rename as you want) -->
+              <a class="btn btn-ghost"
+                 href="../assets/publications/monarca-presentation.pdf"
+                 target="_blank" rel="noopener">
+                Download Presentation (PDF)
+              </a>
+
+              <!-- External link to paper -->
+              <a class="btn"
+                 href="https://YOUR-PAPER-LINK-HERE"
+                 target="_blank" rel="noopener">
+                Paper Link
+              </a>
             </div>
           </div>
 
-          <!-- RIGHT: cover image -->
+          <!-- RIGHT -->
           <div class="pub-right">
-            <img class="pub-cover"
-                 src="../assets/publications/monarca-cover.jpg"
-                 alt="Publication cover: Monarca emergency shelter case study" />
+            <img
+              class="pub-cover"
+              src="../assets/publications/monarca-cover.jpg"
+              alt="Monarca publication cover"
+            />
           </div>
+
         </div>
       </article>
     </section>
   </main>
+
+  <!-- Page-only CSS (safe to keep here or move into styles.css) -->
+  <style>
+    .pub-grid{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items:start;
+    }
+    .pub-cover{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+    }
+    .pub-title{ margin: 0 0 12px; font-size: 26px; line-height: 1.15; }
+    .pub-authors{ margin: 0 0 14px; color: rgba(255,255,255,0.86); }
+    .pub-block{ margin: 16px 0 0; }
+    .pub-label{ margin: 0 0 8px; color: rgba(255,255,255,0.86); }
+    .pub-text{ margin: 0; color: rgba(255,255,255,0.82); }
+    .pub-list{ margin: 0; padding-left: 18px; color: rgba(255,255,255,0.82); }
+    .pub-actions{
+      margin-top: 18px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    @media (max-width: 900px){
+      .pub-grid{ grid-template-columns: 1fr; }
+    }
+  </style>
 </body>
 </html>
