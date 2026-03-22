@@ -6,6 +6,7 @@
   <title>Eiden Garcia — Electrical Engineer &amp; Grid Automation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,23 +14,13 @@
 
   <header class="site-header">
     <div class="header-inner">
-
       <a class="brand" href="index.html" aria-label="Home">
-        <div class="brand-mark">EG</div>
+        <div class="brand-mark"><span class="brand-mark-text">EG</span></div>
         <span class="brand-title">Eiden Garcia</span>
       </a>
-
-      <!-- Hamburger (mobile only) -->
-      <button
-        class="nav-toggle-label"
-        id="nav-toggle"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-      >
+      <button class="nav-toggle-label" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
-
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <a class="nav-link is-active" href="index.html">About</a>
         <a class="nav-link" href="pages/education.html">Education</a>
@@ -49,26 +40,19 @@
   </header>
 
   <main id="main" class="container">
-
-    <!-- Page heading -->
     <section class="page-head">
       <p class="page-eyebrow">ePortfolio</p>
       <h1 class="page-title">Eiden O. Garcia Torres</h1>
     </section>
 
-    <!-- Hero card -->
     <section class="card hero">
       <div class="hero-grid">
-
-        <figure class="profile" aria-hidden="true">
+        <figure class="profile">
           <img src="assets/profile.jpg" alt="Portrait of Eiden O. Garcia Torres" />
         </figure>
-
         <div class="hero-content">
-          <p class="hero-role">B.S. Electrical Engineering · Grid Automation &amp; Reliability</p>
-
-          <!-- Skill tags -->
-          <div class="skill-tags" aria-label="Key skills">
+          <p class="hero-role"><strong>B.S. Electrical Engineering</strong> · Grid Automation &amp; Reliability</p>
+          <div class="skill-tags">
             <span class="skill-tag">Synergi Electric</span>
             <span class="skill-tag">Power BI</span>
             <span class="skill-tag">Python</span>
@@ -76,46 +60,22 @@
             <span class="skill-tag">SAIDI / SAIFI</span>
             <span class="skill-tag">Protection Coordination</span>
           </div>
-
           <h2 class="section-title">About Me</h2>
-          <p>
-            My work focuses on improving grid reliability, automation, and resilience across Puerto Rico
-            by combining field execution with data-driven engineering. I support the commissioning and
-            optimization of Grid Automation devices and develop analytical workflows to evaluate
-            performance, quantify reliability impacts, and inform cost-benefit decisions.
-          </p>
-          <p>
-            I'm especially interested in bridging field operations, protection coordination, and analytics
-            to deliver practical solutions that improve customer outcomes and strengthen system performance.
-          </p>
-
+          <p>My work focuses on improving grid reliability, automation, and resilience across Puerto Rico by combining field execution with data-driven engineering. I support the commissioning and optimization of Grid Automation devices and develop analytical workflows to evaluate performance, quantify reliability impacts, and inform cost-benefit decisions.</p>
+          <p>I'm especially interested in bridging field operations, protection coordination, and analytics to deliver practical solutions that improve customer outcomes and strengthen system performance.</p>
           <div class="cta-row">
-            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">
-              ↓ Resume (PDF)
-            </a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">
-              LinkedIn ↗
-            </a>
+            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">↓ Resume (PDF)</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">LinkedIn ↗</a>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Contact card -->
     <section class="card">
       <h2 class="section-title">Contact</h2>
       <ul class="contact-list">
-        <li>
-          <span class="label">Email</span>
-          <a href="mailto:eiden.garciatorres@gmail.com">eiden.garciatorres@gmail.com</a>
-        </li>
-        <li>
-          <span class="label">LinkedIn</span>
-          <a href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">
-            linkedin.com/in/eidenogarcia
-          </a>
-        </li>
+        <li><span class="label">Email</span><a href="mailto:eiden.garciatorres@gmail.com">eiden.garciatorres@gmail.com</a></li>
+        <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">linkedin.com/in/eidenogarcia</a></li>
       </ul>
     </section>
 
@@ -126,44 +86,27 @@
   </main>
 
   <script>
-    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Hamburger nav toggle
     const btn = document.getElementById("nav-toggle");
     const nav = document.getElementById("primary-nav");
-
-    btn.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded", String(isOpen));
-      // Animate bars to X
-      btn.querySelectorAll("span").forEach((s, i) => {
-        if (isOpen) {
-          if (i === 0) s.style.transform = "translateY(7px) rotate(45deg)";
-          if (i === 1) s.style.opacity   = "0";
-          if (i === 2) s.style.transform = "translateY(-7px) rotate(-45deg)";
-        } else {
-          s.style.transform = "";
-          s.style.opacity   = "";
-        }
-      });
-    });
-
-    // Close on link tap
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", closeNav);
-    });
-
-    // Close on outside tap
-    document.addEventListener("click", (e) => {
-      if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
-    });
-
     function closeNav() {
       nav.classList.remove("is-open");
-      btn.setAttribute("aria-expanded", "false");
-      btn.querySelectorAll("span").forEach(s => { s.style.transform = ""; s.style.opacity = ""; });
+      btn.setAttribute("aria-expanded","false");
+      btn.querySelectorAll("span").forEach(s=>{s.style.transform="";s.style.opacity="";});
     }
+    btn.addEventListener("click",()=>{
+      const open = nav.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded",String(open));
+      btn.querySelectorAll("span").forEach((s,i)=>{
+        if(open){
+          if(i===0)s.style.transform="translateY(7px) rotate(45deg)";
+          if(i===1)s.style.opacity="0";
+          if(i===2)s.style.transform="translateY(-7px) rotate(-45deg)";
+        } else { s.style.transform=""; s.style.opacity=""; }
+      });
+    });
+    nav.querySelectorAll("a").forEach(l=>l.addEventListener("click",closeNav));
+    document.addEventListener("click",e=>{if(!nav.contains(e.target)&&!btn.contains(e.target))closeNav();});
   </script>
 </body>
 </html>
