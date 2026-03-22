@@ -356,11 +356,17 @@ figure.profile { margin: 0; padding: 0; display: block; }
    FOOTER
    ============================================================ */
 .footer {
-  margin-top: 32px; padding: 18px 4px 8px;
+  margin-top: 32px;
+  padding: 18px 4px 24px;
   border-top: 1px solid var(--border);
-  color: var(--ink-dim); font-size: 12px; font-family: var(--font-m);
-  display: flex; align-items: center; justify-content: center;
-  flex-direction: column; gap: 4px; text-align: center;
+  color: var(--ink-dim);
+  font-size: 12px;
+  font-family: var(--font-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 /* ============================================================
@@ -502,6 +508,7 @@ figure.profile { margin: 0; padding: 0; display: block; }
 
   /* Content */
   .container { padding: 0 16px 52px; }
+  .footer { flex-direction: column; justify-content: center; text-align: center; }
   .card { padding: 20px; }
   .profile { width: 200px; height: 240px; }   /* larger on phone */
   .brand-title { font-size: 14px; }
