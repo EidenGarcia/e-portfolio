@@ -3,27 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eiden Garcia ePortfolio — About Me</title>
+  <title>Eiden Garcia — Electrical Engineer &amp; Grid Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <div class="header-inner">
+
       <a class="brand" href="index.html" aria-label="Home">
-        <span class="brand-title">Eiden Garcia ePortfolio</span>
+        <div class="brand-mark">EG</div>
+        <span class="brand-title">Eiden Garcia</span>
       </a>
-      
-      <label class="nav-toggle-label" for="nav-toggle" aria-label="Toggle navigation">
+
+      <!-- Hamburger (mobile only) -->
+      <button
+        class="nav-toggle-label"
+        id="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
         <span></span><span></span><span></span>
-      </label>
+      </button>
 
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-link is-active" href="index.html">About Me</a>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a class="nav-link is-active" href="index.html">About</a>
         <a class="nav-link" href="pages/education.html">Education</a>
-
         <details class="nav-details">
           <summary class="nav-link">Experience ▾</summary>
           <div class="nav-dropdown">
@@ -32,63 +41,129 @@
             <a class="nav-dropdown-link" href="pages/experience-publications.html">Publications</a>
           </div>
         </details>
-
-        <a class="nav-link" href="awards.html">Awards &amp; Honors</a>
-        <a class="nav-link" href="certifications.html">Licenses &amp; Certifications</a>
+        <a class="nav-link" href="awards.html">Awards</a>
+        <a class="nav-link" href="certifications.html">Certifications</a>
         <a class="nav-link" href="organizations.html">Organizations</a>
       </nav>
     </div>
   </header>
 
   <main id="main" class="container">
+
+    <!-- Page heading -->
     <section class="page-head">
-      <h1 class="page-title">Eiden O. Garcia Torres, B.S.E.E.</h1>
+      <p class="page-eyebrow">ePortfolio</p>
+      <h1 class="page-title">Eiden O. Garcia Torres</h1>
     </section>
 
+    <!-- Hero card -->
     <section class="card hero">
       <div class="hero-grid">
-        <figure class="profile">
+
+        <figure class="profile" aria-hidden="true">
           <img src="assets/profile.jpg" alt="Portrait of Eiden O. Garcia Torres" />
         </figure>
 
         <div class="hero-content">
-          <h2 class="section-title">ABOUT ME</h2>
+          <p class="hero-role">B.S. Electrical Engineering · Grid Automation &amp; Reliability</p>
 
-        <p>
-            My work focuses on improving grid reliability, automation, and resilience across Puerto Rico by combining
-            field execution with data-driven engineering. I support the commissioning and optimization of Grid Automation
-            devices and develop analytical workflows using Synergi Electric, Power BI, Python, and GIS to evaluate performance,
-            quantify reliability impacts (CMI/SAIDI/SAIFI), and inform cost-benefit decisions.
-          </p>
+          <!-- Skill tags -->
+          <div class="skill-tags" aria-label="Key skills">
+            <span class="skill-tag">Synergi Electric</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">GIS</span>
+            <span class="skill-tag">SAIDI / SAIFI</span>
+            <span class="skill-tag">Protection Coordination</span>
+          </div>
 
+          <h2 class="section-title">About Me</h2>
           <p>
-            I’m especially interested in bridging field operations, protection coordination, and analytics to deliver
-            practical solutions that improve customer outcomes and strengthen system performance.
+            My work focuses on improving grid reliability, automation, and resilience across Puerto Rico
+            by combining field execution with data-driven engineering. I support the commissioning and
+            optimization of Grid Automation devices and develop analytical workflows to evaluate
+            performance, quantify reliability impacts, and inform cost-benefit decisions.
+          </p>
+          <p>
+            I'm especially interested in bridging field operations, protection coordination, and analytics
+            to deliver practical solutions that improve customer outcomes and strengthen system performance.
           </p>
 
           <div class="cta-row">
-            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">
+              ↓ Resume (PDF)
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">
+              LinkedIn ↗
+            </a>
           </div>
         </div>
+
       </div>
     </section>
 
+    <!-- Contact card -->
     <section class="card">
-      <h2 class="section-title">Contact Information</h2>
+      <h2 class="section-title">Contact</h2>
       <ul class="contact-list">
-        <li><span class="label">Email:</span> <a href="mailto:eiden.garciatorres@gmail.com">eiden.garciatorres@gmail.com</a></li>
-        <li><span class="label">LinkedIn:</span> <a href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">www.linkedin.com/in/eidenogarcia</a></li>
+        <li>
+          <span class="label">Email</span>
+          <a href="mailto:eiden.garciatorres@gmail.com">eiden.garciatorres@gmail.com</a>
+        </li>
+        <li>
+          <span class="label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">
+            linkedin.com/in/eidenogarcia
+          </a>
+        </li>
       </ul>
     </section>
 
     <footer class="footer">
-      <small>© <span id="year"></span> Eiden Garcia</small>
+      <small>© <span id="year"></span> Eiden O. Garcia Torres</small>
+      <small>Electrical Engineer · Puerto Rico</small>
     </footer>
   </main>
 
   <script>
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Hamburger nav toggle
+    const btn = document.getElementById("nav-toggle");
+    const nav = document.getElementById("primary-nav");
+
+    btn.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+      // Animate bars to X
+      btn.querySelectorAll("span").forEach((s, i) => {
+        if (isOpen) {
+          if (i === 0) s.style.transform = "translateY(7px) rotate(45deg)";
+          if (i === 1) s.style.opacity   = "0";
+          if (i === 2) s.style.transform = "translateY(-7px) rotate(-45deg)";
+        } else {
+          s.style.transform = "";
+          s.style.opacity   = "";
+        }
+      });
+    });
+
+    // Close on link tap
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeNav);
+    });
+
+    // Close on outside tap
+    document.addEventListener("click", (e) => {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+    });
+
+    function closeNav() {
+      nav.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      btn.querySelectorAll("span").forEach(s => { s.style.transform = ""; s.style.opacity = ""; });
+    }
   </script>
 </body>
 </html>
