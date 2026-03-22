@@ -74,19 +74,19 @@
     <section class="card">
       <h2 class="section-title">Contact</h2>
       <ul class="contact-list">
-        <li><span class="label">Email</span><a href="mailto:eiden.garciatorres@gmail.com">eiden.garciatorres@gmail.com</a></li>
+        <li><span class="label">Email</span><a href="/cdn-cgi/l/email-protection#9bfef2fffef5b5fcfae9f8f2faeff4e9e9fee8dbfcf6faf2f7b5f8f4f6"><span class="__cf_email__" data-cfemail="44212d20212a6a232536272d25302b36362137042329252d286a272b29">[email&#160;protected]</span></a></li>
         <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/eidenogarcia/" target="_blank" rel="noopener">linkedin.com/in/eidenogarcia</a></li>
       </ul>
     </section>
 
     <footer class="footer">
-      <small>© <span id="year"></span> Eiden O. Garcia Torres</small>
+      <small>© <span class="year"></span> Eiden O. Garcia Torres</small>
       <small>Electrical Engineer · Puerto Rico</small>
     </footer>
   </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
     const btn = document.getElementById("nav-toggle");
     const nav = document.getElementById("primary-nav");
     function closeNav() {
@@ -102,11 +102,4 @@
           if(i===0)s.style.transform="translateY(7px) rotate(45deg)";
           if(i===1)s.style.opacity="0";
           if(i===2)s.style.transform="translateY(-7px) rotate(-45deg)";
-        } else { s.style.transform=""; s.style.opacity=""; }
-      });
-    });
-    nav.querySelectorAll("a").forEach(l=>l.addEventListener("click",closeNav));
-    document.addEventListener("click",e=>{if(!nav.contains(e.target)&&!btn.contains(e.target))closeNav();});
-  </script>
-</body>
-</html>
+        } else { s.style.transform=
