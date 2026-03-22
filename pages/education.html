@@ -58,35 +58,55 @@
           <div class="edu-body">
             <h2 class="edu-title">B.S. in Electronics Engineering Technology (BSEET)</h2>
             <p class="edu-meta"><strong>University of Puerto Rico at Bayamón</strong> · Aug 2018 – Dec 2019</p>
+
             <p class="edu-text">
-              Completed foundational coursework in electrical and electronic systems, including DC circuits
-              and digital circuits with associated laboratory work. This program provided early hands-on
-              exposure to electrical concepts, instrumentation, and practical problem-solving, strengthening
-              my technical intuition and troubleshooting skills.
+              Completed foundational coursework in electrical and electronic systems, including DC circuits and digital circuits with associated laboratory work.
+              This program provided early hands-on exposure to electrical concepts, instrumentation, and practical problem-solving, strengthening my technical intuition
+              and troubleshooting skills.
             </p>
+
             <p class="edu-text">
-              After gaining this applied foundation, I transitioned to the Electrical Engineering program
-              to pursue deeper theoretical and system-level understanding. The combination of applied and
-              analytical training continues to inform my approach to field diagnostics, commissioning
-              activities, and engineering decision-making.
+              After gaining this applied foundation, I transitioned to the Electrical Engineering program to pursue deeper theoretical and system-level understanding.
+              The combination of applied and analytical training continues to inform my approach to field diagnostics, commissioning activities, and engineering decision-making.
             </p>
           </div>
         </article>
 
-        <!-- CARD 2: UPRM -->
+        <!-- CARD 2: UPRM (BSEE + MINORS INSIDE) -->
         <article class="edu-card2">
           <img class="edu-img" src="../assets/education-mayaguez.png" alt="University of Puerto Rico at Mayagüez seal" />
           <div class="edu-body">
             <h2 class="edu-title">B.S. in Electrical Engineering (Power &amp; Systems), Cum Laude</h2>
             <p class="edu-meta"><strong>University of Puerto Rico at Mayagüez</strong> · Dec 2019 – Dec 2024</p>
+
             <p class="edu-text">
-              Earned a B.S. in Electrical Engineering with a concentration in Power &amp; Systems,
-              graduating Cum Laude. Developed strong fundamentals in power systems analysis, control
-              systems, protection, and signal processing through rigorous coursework and laboratory work.
+              Completed a concentration in Power &amp; Systems with emphasis on power system analysis, protection and coordination, and transmission and distribution systems.
+              Upper-level coursework included Power Systems Analysis, Power Electronics, Transmission &amp; Distribution, and advanced circuit analysis, providing a rigorous
+              foundation for modeling, fault analysis, protection coordination, and reliability evaluation in distribution networks.
             </p>
+
+            <p class="edu-text">
+              This academic training directly supports my professional work in grid automation and reliability, where I apply power system fundamentals to feeder modeling,
+              protection studies, and evaluation of cost-effective reliability improvements. Graduated <strong>Cum Laude</strong>.
+            </p>
+
+            <!-- MINORS INSIDE THIS CARD — exactly as original -->
+            <h3 class="edu-subhead" style="margin-top:16px;">Minors</h3>
+            <p class="edu-meta"><strong>University of Puerto Rico at Mayagüez</strong></p>
+
             <ul class="edu-list2">
-              <li><strong>Minor:</strong> Computer Engineering</li>
-              <li><strong>Minor:</strong> Engineering Management</li>
+              <li>
+                <strong>Project Management</strong> — Applied to planning, prioritizing, and communicating engineering work within multi-stakeholder infrastructure projects,
+                supporting structured decision-making and schedule-driven execution.
+              </li>
+              <li>
+                <strong>Integrated Practice in Construction Engineering &amp; Architecture</strong> — Enhanced understanding of constructability, field constraints, and coordination with crews
+                and infrastructure stakeholders in real-world deployment environments.
+              </li>
+              <li>
+                <strong>Applied &amp; Professional Ethics</strong> — Informed engineering judgment with respect to safety, public impact, and the long-term consequences of reliability and
+                infrastructure decisions.
+              </li>
             </ul>
           </div>
         </article>
@@ -94,7 +114,6 @@
       </div>
     </section>
 
-    <!-- ===== SITE FOOTER — same on every page ===== -->
     <footer class="footer">
       <small>© <span class="year"></span> Eiden O. Garcia Torres</small>
       <small>Electrical Engineer · Puerto Rico</small>
@@ -102,10 +121,8 @@
   </main>
 
   <script>
-    // Fill year everywhere
     document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
 
-    // Hamburger nav
     const btn = document.getElementById("nav-toggle");
     const nav = document.getElementById("primary-nav");
     function closeNav() {
