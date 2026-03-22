@@ -11,34 +11,30 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-
   <header class="site-header">
     <div class="header-inner">
-
       <a class="brand" href="../index.html" aria-label="Home">
         <div class="brand-mark"><span class="brand-mark-text">EG</span></div>
         <span class="brand-title">Eiden Garcia</span>
       </a>
-
       <button class="nav-toggle-label" id="nav-toggle"
         aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
-
       <nav class="nav" id="primary-nav" aria-label="Primary">
-        <a class="nav-link" href="../index.html">About</a>
-        <a class="nav-link" href="education.html">Education</a>
+        <a class="nav-link " href="../index.html">About</a>
+        <a class="nav-link " href="education.html">Education</a>
         <details class="nav-details" open>
           <summary class="nav-link is-active">Experience ▾</summary>
           <div class="nav-dropdown">
             <a class="nav-dropdown-link is-active" href="experience-professional.html">Professional</a>
-            <a class="nav-dropdown-link" href="experience-academic.html">Academic</a>
-            <a class="nav-dropdown-link" href="experience-publications.html">Publications</a>
+            <a class="nav-dropdown-link " href="experience-academic.html">Academic</a>
+            <a class="nav-dropdown-link " href="experience-publications.html">Publications</a>
           </div>
         </details>
-        <a class="nav-link" href="../awards.html">Awards</a>
-        <a class="nav-link" href="../certifications.html">Certifications</a>
-        <a class="nav-link" href="../organizations.html">Organizations</a>
+        <a class="nav-link " href="awards.html">Awards</a>
+        <a class="nav-link " href="certifications.html">Certifications</a>
+        <a class="nav-link " href="organizations.html">Organizations</a>
       </nav>
     </div>
   </header>
@@ -48,11 +44,9 @@
       <p class="page-eyebrow">ePortfolio</p>
       <h1 class="page-title">Professional Experience</h1>
     </section>
-
     <section class="card">
       <div class="exp-grid">
 
-        <!-- CARD 1 -->
         <article class="exp-card">
           <img class="exp-img" src="../assets/exp-tech2.jpg" alt="Technical Specialist II at LUMA Energy" />
           <div class="exp-body">
@@ -66,7 +60,6 @@
           </div>
         </article>
 
-        <!-- CARD 2 -->
         <article class="exp-card">
           <img class="exp-img" src="../assets/exp-jr.jpg" alt="Jr. Technical Specialist at LUMA Energy" />
           <div class="exp-body">
@@ -80,7 +73,6 @@
           </div>
         </article>
 
-        <!-- CARD 3 -->
         <article class="exp-card">
           <img class="exp-img" src="../assets/exp-intern.jpg" alt="Co-op & Internship at LUMA Energy" />
           <div class="exp-body">
@@ -96,36 +88,41 @@
 
       </div>
     </section>
-
     <footer class="footer">
       <small>© <span class="year"></span> Eiden O. Garcia Torres</small>
       <small>Electrical Engineer · Puerto Rico</small>
     </footer>
   </main>
-
   <script>
-    document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
-
-    const btn = document.getElementById("nav-toggle");
-    const nav = document.getElementById("primary-nav");
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.year').forEach(function(el) {
+      el.textContent = new Date().getFullYear();
+    });
+    var btn = document.getElementById('nav-toggle');
+    var nav = document.getElementById('primary-nav');
+    if (!btn || !nav) return;
     function closeNav() {
-      nav.classList.remove("is-open");
-      btn.setAttribute("aria-expanded","false");
-      btn.querySelectorAll("span").forEach(s=>{s.style.transform="";s.style.opacity="";});
+      nav.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.querySelectorAll('span').forEach(function(s) { s.style.transform = ''; s.style.opacity = ''; });
     }
-    btn.addEventListener("click",()=>{
-      const open = nav.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded",String(open));
-      btn.querySelectorAll("span").forEach((s,i)=>{
-        if(open){
-          if(i===0)s.style.transform="translateY(7px) rotate(45deg)";
-          if(i===1)s.style.opacity="0";
-          if(i===2)s.style.transform="translateY(-7px) rotate(-45deg)";
-        } else { s.style.transform=""; s.style.opacity=""; }
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      btn.querySelectorAll('span').forEach(function(s, i) {
+        if (isOpen) {
+          if (i === 0) s.style.transform = 'translateY(7px) rotate(45deg)';
+          if (i === 1) s.style.opacity = '0';
+          if (i === 2) s.style.transform = 'translateY(-7px) rotate(-45deg)';
+        } else { s.style.transform = ''; s.style.opacity = ''; }
       });
     });
-    nav.querySelectorAll("a").forEach(l=>l.addEventListener("click",closeNav));
-    document.addEventListener("click",e=>{if(!nav.contains(e.target)&&!btn.contains(e.target))closeNav();});
-  </script>
+    nav.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', closeNav); });
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+    });
+  });
+</script>
 </body>
 </html>
