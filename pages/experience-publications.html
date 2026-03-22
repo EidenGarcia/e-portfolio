@@ -4,44 +4,48 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Publications — Eiden Garcia</title>
-
-  <!-- This file is inside /pages -->
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="../index.html">
-        <span class="brand-title">Eiden Garcia ePortfolio</span>
+
+      <a class="brand" href="../index.html" aria-label="Home">
+        <div class="brand-mark"><span class="brand-mark-text">EG</span></div>
+        <span class="brand-title">Eiden Garcia</span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-link" href="../index.html">About Me</a>
+      <button class="nav-toggle-label" id="nav-toggle"
+        aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a class="nav-link" href="../index.html">About</a>
         <a class="nav-link" href="education.html">Education</a>
-
-        <!-- Experience dropdown -->
-        <details class="nav-details">
-          <summary class="nav-link is-active">Experience</summary>
-
-          <div class="nav-dropdown" role="menu" aria-label="Experience submenu">
+        <details class="nav-details" open>
+          <summary class="nav-link is-active">Experience ▾</summary>
+          <div class="nav-dropdown">
             <a class="nav-dropdown-link" href="experience-professional.html">Professional</a>
             <a class="nav-dropdown-link" href="experience-academic.html">Academic</a>
             <a class="nav-dropdown-link is-active" href="experience-publications.html">Publications</a>
           </div>
         </details>
-
-        <a class="nav-link" href="awards.html">Awards &amp; Honors</a>
-        <a class="nav-link" href="certifications.html">Licenses &amp; Certifications</a>
-        <a class="nav-link" href="organizations.html">Organizations</a>
+        <a class="nav-link" href="../awards.html">Awards</a>
+        <a class="nav-link" href="../certifications.html">Certifications</a>
+        <a class="nav-link" href="../organizations.html">Organizations</a>
       </nav>
     </div>
   </header>
 
   <main id="main" class="container pub-page">
     <section class="page-head">
+      <p class="page-eyebrow">ePortfolio</p>
       <h1 class="page-title">Publications</h1>
     </section>
 
@@ -55,44 +59,41 @@
               Emergency Shelter and Connectivity for Rural Communities After Natural Disasters: A Case Study
             </h2>
 
-            <p class="pub-authors">
-              <strong>Authors:</strong>
-              Josué A. Dieppa Ortiz; Carla López del Puerto; Génesis P. Acevedo Guzmán; <strong>Eiden O. García Torres</strong>;
-              Humberto E. Cavallin Calanche; Daniel Rodríguez Román; Fabio Andrade Rengifo
+            <p class="pub-meta">
+              Josué A. Dieppa Ortiz · Carla López del Puerto · Génesis P. Acevedo Guzmán ·
+              <strong>Eiden O. García Torres</strong> · Humberto E. Cavallin Calanche ·
+              Daniel Rodríguez Román · Fabio Andrade Rengifo
             </p>
 
             <div class="pub-block">
-              <p class="pub-label"><strong>Affiliations:</strong></p>
+              <p class="pub-label">Affiliations</p>
               <ul class="pub-list">
-                <li>Civil Engineering and Surveying Department, University of Puerto Rico, Mayagüez, Puerto Rico</li>
-                <li>Electrical and Computer Engineering Department, University of Puerto Rico, Mayagüez, Puerto Rico</li>
-                <li>School of Architecture, University of Puerto Rico, Río Piedras, Puerto Rico</li>
+                <li>Civil Engineering and Surveying Department, University of Puerto Rico, Mayagüez</li>
+                <li>Electrical and Computer Engineering Department, University of Puerto Rico, Mayagüez</li>
+                <li>School of Architecture, University of Puerto Rico, Río Piedras</li>
               </ul>
             </div>
 
             <div class="pub-block">
-              <p class="pub-label"><strong>Contribution:</strong></p>
+              <p class="pub-label">Contribution</p>
               <p class="pub-text">
-                Led the design and analysis of the <strong>Photovoltaic Energetic System</strong> integrated into the modular emergency shelter.
-                This included assessing solar irradiation data, determining system sizing for off-grid operation, and evaluating the shelter’s
-                capacity to provide reliable and sustainable energy during post-disaster conditions.
+                Led the design and analysis of the <strong>Photovoltaic Energetic System</strong> integrated
+                into the modular emergency shelter. This included assessing solar irradiation data, determining
+                system sizing for off-grid operation, and evaluating the shelter's capacity to provide reliable
+                and sustainable energy during post-disaster conditions.
               </p>
             </div>
 
-            <!-- BUTTONS (NO POSTER) -->
             <div class="pub-actions">
-              <!-- Local PDF in assets (rename as you want) -->
               <a class="btn btn-ghost"
-                 href="../assets/publications/monarca-presentation.pdf"
-                 target="_blank" rel="noopener">
-                Download Presentation (PDF)
+                href="../assets/publications/monarca-presentation.pdf"
+                target="_blank" rel="noopener">
+                ↓ Download Presentation (PDF)
               </a>
-
-              <!-- External link to paper -->
               <a class="btn"
-                 href="https://www.isec-society.org/ISEC_PRESS/LATAM_SEC_2024/pdf/HOS-04.pdf"
-                 target="_blank" rel="noopener">
-                Paper Link
+                href="https://www.isec-society.org/ISEC_PRESS/LATAM_SEC_2024/pdf/HOS-04.pdf"
+                target="_blank" rel="noopener">
+                Paper Link ↗
               </a>
             </div>
           </div>
@@ -109,39 +110,36 @@
         </div>
       </article>
     </section>
+
+    <footer class="footer">
+      <small>© <span class="year"></span> Eiden O. Garcia Torres</small>
+      <small>Electrical Engineer · Puerto Rico</small>
+    </footer>
   </main>
 
-  <!-- Page-only CSS (safe to keep here or move into styles.css) -->
-  <style>
-    .pub-grid{
-      display:grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 22px;
-      align-items:start;
+  <script>
+    document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
+
+    const btn = document.getElementById("nav-toggle");
+    const nav = document.getElementById("primary-nav");
+    function closeNav() {
+      nav.classList.remove("is-open");
+      btn.setAttribute("aria-expanded","false");
+      btn.querySelectorAll("span").forEach(s=>{s.style.transform="";s.style.opacity="";});
     }
-    .pub-cover{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.03);
-    }
-    .pub-title{ margin: 0 0 12px; font-size: 26px; line-height: 1.15; }
-    .pub-authors{ margin: 0 0 14px; color: rgba(255,255,255,0.86); }
-    .pub-block{ margin: 16px 0 0; }
-    .pub-label{ margin: 0 0 8px; color: rgba(255,255,255,0.86); }
-    .pub-text{ margin: 0; color: rgba(255,255,255,0.82); }
-    .pub-list{ margin: 0; padding-left: 18px; color: rgba(255,255,255,0.82); }
-    .pub-actions{
-      margin-top: 18px;
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    @media (max-width: 900px){
-      .pub-grid{ grid-template-columns: 1fr; }
-    }
-  </style>
+    btn.addEventListener("click",()=>{
+      const open = nav.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded",String(open));
+      btn.querySelectorAll("span").forEach((s,i)=>{
+        if(open){
+          if(i===0)s.style.transform="translateY(7px) rotate(45deg)";
+          if(i===1)s.style.opacity="0";
+          if(i===2)s.style.transform="translateY(-7px) rotate(-45deg)";
+        } else { s.style.transform=""; s.style.opacity=""; }
+      });
+    });
+    nav.querySelectorAll("a").forEach(l=>l.addEventListener("click",closeNav));
+    document.addEventListener("click",e=>{if(!nav.contains(e.target)&&!btn.contains(e.target))closeNav();});
+  </script>
 </body>
 </html>
