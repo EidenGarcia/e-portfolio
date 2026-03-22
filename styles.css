@@ -247,6 +247,9 @@ img { display: block; max-width: 100%; }
   align-items: start;
 }
 
+/* figure reset */
+figure.profile { margin: 0; padding: 0; display: block; }
+
 /* Profile — rounded square like the logo, matches iPhone card */
 .profile {
   width: 200px; height: 200px;
@@ -264,9 +267,12 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 .profile img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: 50% 25%;
-  transform: scale(1.6); transform-origin: center 30%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;  /* face centered horizontally, anchored to top */
+  display: block;
+  transform: none;              /* no zoom — face fills the box naturally */
 }
 
 /* Role line */
@@ -443,6 +449,9 @@ img { display: block; max-width: 100%; }
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
+  }
+  figure.profile {
+    margin: 0 auto;   /* center the photo block when stacked */
   }
   .skill-tags, .cta-row { justify-content: center; }
 }
