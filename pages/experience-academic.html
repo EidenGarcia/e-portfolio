@@ -8,6 +8,92 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Page-scoped overrides: horizontal card layout -->
+  <style>
+    .acad-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .acad-card {
+      background: var(--card);
+      border: 1px solid rgba(126,232,194,0.10);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .acad-card:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+
+    /* Left: fixed-width image panel */
+    .acad-img-wrap {
+      flex-shrink: 0;
+      width: 260px;
+      overflow: hidden;
+      position: relative;
+    }
+    .acad-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Right: content panel */
+    .acad-body {
+      flex: 1;
+      padding: 28px 30px;
+      min-width: 0;
+    }
+
+    .acad-title {
+      font-family: var(--font-d);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .acad-meta {
+      font-family: var(--font-m);
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .acad-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 16px;
+    }
+
+    .acad-list-items {
+      padding-left: 18px;
+      color: rgba(255,255,255,0.80);
+    }
+    .acad-list-items li {
+      margin-bottom: 10px;
+      line-height: 1.55;
+      font-size: 14.5px;
+    }
+
+    /* Responsive: stack on tablet/mobile */
+    @media (max-width: 780px) {
+      .acad-card { flex-direction: column; }
+      .acad-img-wrap { width: 100%; height: 200px; }
+      .acad-body { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -39,33 +125,32 @@
     </div>
   </header>
 
-  <main id="main" class="container exp-page">
+  <main id="main" class="container">
     <section class="page-head">
       <p class="page-eyebrow">ePortfolio</p>
       <h1 class="page-title">Academic Experience</h1>
     </section>
 
     <section class="card">
-      <div class="exp-grid">
+      <div class="acad-list">
 
-        <!-- SERRT Solar Car -->
-        <article class="exp-card">
-          <img class="exp-img" src="../assets/acad-serrt.jpg" alt="Solar Engineering Research Racing Team — Chief Electrical Engineer" />
-          <div class="exp-body">
-            <h2 class="exp-title">Chief Electrical Engineer</h2>
-            <p class="exp-meta">
+        <!-- 1. SERRT — most recent -->
+        <article class="acad-card">
+          <div class="acad-img-wrap">
+            <img src="../assets/acad-serrt.jpg" alt="Solar Engineering Research Racing Team — Chief Electrical Engineer" />
+          </div>
+          <div class="acad-body">
+            <h2 class="acad-title">Chief Electrical Engineer</h2>
+            <p class="acad-meta">
               <strong>Solar Engineering Research Racing Team (SERRT)</strong> · Team #787<br>
               Jan 2021 – Jul 2022 · 1 yr 7 mos · Mayagüez, PR
             </p>
-
-            <!-- Role progression badge -->
-            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px;">
+            <div class="acad-tags">
               <span class="skill-tag">Battery Division Member · Jan–Aug 2021</span>
               <span class="skill-tag">Battery Division Leader · Aug 2021–Jul 2022</span>
               <span class="skill-tag">Chief Electrical Engineer · Feb–Jul 2022</span>
             </div>
-
-            <ul class="exp-list">
+            <ul class="acad-list-items">
               <li>Progressed from Member → Battery Division Leader → Chief Electrical Engineer through demonstrated technical excellence — overseeing the full electrical team and driving the solar car project toward competition readiness.</li>
               <li>Led design and fabrication of a 420-cell, 108V nominal Li-Ion battery pack (Panasonic NCR18650B) housed in a custom fiberglass-composite enclosure weighing under 20 kg, configured as 30 modules in series with 14 parallel cells each.</li>
               <li>Implemented and configured the Orion BMS 2 — managing CAN bus communication, contactor control, state-of-charge monitoring, and all charge/discharge protection parameters including over/under voltage, over-current, and thermal thresholds.</li>
@@ -76,16 +161,18 @@
           </div>
         </article>
 
-        <!-- Cokí Racing Team -->
-        <article class="exp-card">
-          <img class="exp-img" src="../assets/acad-coki.jpg" alt="Electrical Division Member at Cokí Racing Team" />
-          <div class="exp-body">
-            <h2 class="exp-title">Electrical Division Member</h2>
-            <p class="exp-meta">
+        <!-- 2. Cokí Racing Team -->
+        <article class="acad-card">
+          <div class="acad-img-wrap">
+            <img src="../assets/acad-coki.jpg" alt="Electrical Division Member at Cokí Racing Team" />
+          </div>
+          <div class="acad-body">
+            <h2 class="acad-title">Electrical Division Member</h2>
+            <p class="acad-meta">
               <strong>Cokí Racing Team</strong> · Formula-Style Car Project<br>
               Jan 2021 – Jun 2022 · 1 yr 6 mos · Mayagüez, PR
             </p>
-            <ul class="exp-list">
+            <ul class="acad-list-items">
               <li>Designed and implemented electrical systems for a high-performance car project, and developed a wireless sensor proof-of-concept using Arduino Uno, HC-12 radio module, WiFi module, ultrasonic sensor, fotoresistor, and SD card module.</li>
               <li>Built an iterative data pipeline to capture sensor readings, log them to an SD card, and transmit data wirelessly — successfully achieving end-to-end data transfer before transitioning to a more senior role.</li>
               <li>Established real-time monitoring protocols to track vehicle behavior and improve data acquisition and control, with a vision to visualize telemetry on an external device.</li>
@@ -93,16 +180,18 @@
           </div>
         </article>
 
-        <!-- RUMblebots -->
-        <article class="exp-card">
-          <img class="exp-img" src="../assets/acad-rumblebots.jpg" alt="Electrical Division Member at RUMblebots" />
-          <div class="exp-body">
-            <h2 class="exp-title">Electrical Division Member</h2>
-            <p class="exp-meta">
+        <!-- 3. RUMblebots -->
+        <article class="acad-card">
+          <div class="acad-img-wrap">
+            <img src="../assets/acad-rumblebots.jpg" alt="Electrical Division Member at RUMblebots" />
+          </div>
+          <div class="acad-body">
+            <h2 class="acad-title">Electrical Division Member</h2>
+            <p class="acad-meta">
               <strong>RUMblebots</strong> · Combat Robotics Team<br>
               Jan 2021 – Aug 2021 · 8 mos · Mayagüez, PR
             </p>
-            <ul class="exp-list">
+            <ul class="acad-list-items">
               <li>Sourced and selected high-quality electrical components — primarily motors — for a competition combat robot, balancing strict power requirements and budget constraints to maximize performance and reliability.</li>
               <li>Developed and rigorously tested the robot's full electrical system, ensuring optimal functionality and safety under competition conditions.</li>
               <li>Collaborated within a multidisciplinary team, preparing detailed progress reports that improved cross-team communication and project tracking.</li>
@@ -110,16 +199,18 @@
           </div>
         </article>
 
-        <!-- Centro Criollo -->
-        <article class="exp-card">
-          <img class="exp-img" src="../assets/acad-centro-criollo.jpg" alt="Educator at Centro Criollo de Ciencias y Tecnología" />
-          <div class="exp-body">
-            <h2 class="exp-title">Educator &amp; Tour Guide</h2>
-            <p class="exp-meta">
+        <!-- 4. Centro Criollo -->
+        <article class="acad-card">
+          <div class="acad-img-wrap">
+            <img src="../assets/acad-centro-criollo.jpg" alt="Educator at Centro Criollo de Ciencias y Tecnología" />
+          </div>
+          <div class="acad-body">
+            <h2 class="acad-title">Educator &amp; Tour Guide</h2>
+            <p class="acad-meta">
               <strong>Centro Criollo de Ciencias y Tecnología, Inc.</strong> · Part-time<br>
               Jan 2021 – May 2021 · 5 mos · Caguas, PR
             </p>
-            <ul class="exp-list">
+            <ul class="acad-list-items">
               <li>Delivered engaging STEM workshops and educational support in mathematics, science, and technology to diverse student groups, with a focus on children ages 6–10 using interactive, everyday-life examples to make science click.</li>
               <li>Served as Tour Guide for the Permanent Exhibition and Arecibo Observatory legacy exhibit — managing groups of up to 20 individuals and helping preserve the Observatory's legacy after its collapse by inspiring visitors about space exploration and its impact.</li>
               <li>Provided tutoring and mentoring that positively impacted students' educational journeys and nurtured a passion for learning in science and technology.</li>
@@ -127,16 +218,18 @@
           </div>
         </article>
 
-        <!-- CECIA -->
-        <article class="exp-card">
-          <img class="exp-img" src="../assets/acad-cecia.jpg" alt="CECIA President at CIAPR — UPR Bayamón" />
-          <div class="exp-body">
-            <h2 class="exp-title">President, Student Organization CECIA</h2>
-            <p class="exp-meta">
+        <!-- 5. CECIA — oldest -->
+        <article class="acad-card">
+          <div class="acad-img-wrap">
+            <img src="../assets/acad-cecia.jpg" alt="CECIA President at CIAPR — UPR Bayamón" />
+          </div>
+          <div class="acad-body">
+            <h2 class="acad-title">President, Student Organization CECIA</h2>
+            <p class="acad-meta">
               <strong>CIAPR – Colegio de Ingenieros y Agrimensores de PR</strong><br>
               Jan 2018 – Jan 2019 · 1 yr · Bayamón, PR
             </p>
-            <ul class="exp-list">
+            <ul class="acad-list-items">
               <li>Revived a completely dormant student chapter at UPR Bayamón — handled all official registration paperwork independently and built a founding directive team from scratch, recruiting members aligned with the organization's vision and grit.</li>
               <li>Led strategic initiatives to connect engineering students with CIAPR resources, professional awareness, and pathways to transfer to UPRM.</li>
               <li>Organized industry site visits bridging theoretical knowledge with real-world application, and fostered a collaborative environment that empowered future engineers.</li>
