@@ -8,6 +8,85 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Page-scoped overrides: horizontal card layout -->
+  <style>
+    .prof-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .prof-card {
+      background: var(--card);
+      border: 1px solid rgba(126,232,194,0.10);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .prof-card:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+
+    /* Left: fixed-width image panel */
+    .prof-img-wrap {
+      flex-shrink: 0;
+      width: 260px;
+      overflow: hidden;
+      position: relative;
+    }
+    .prof-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Right: content panel */
+    .prof-body {
+      flex: 1;
+      padding: 28px 30px;
+      min-width: 0;
+    }
+
+    .prof-title {
+      font-family: var(--font-d);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .prof-meta {
+      font-family: var(--font-m);
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .prof-list-items {
+      padding-left: 18px;
+      color: rgba(255,255,255,0.80);
+    }
+    .prof-list-items li {
+      margin-bottom: 10px;
+      line-height: 1.55;
+      font-size: 14.5px;
+    }
+
+    /* Responsive: stack on tablet/mobile */
+    @media (max-width: 780px) {
+      .prof-card { flex-direction: column; }
+      .prof-img-wrap { width: 100%; height: 200px; }
+      .prof-body { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -22,37 +101,44 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
-        <a class="nav-link " href="../index.html">About</a>
-        <a class="nav-link " href="education.html">Education</a>
+        <a class="nav-link" href="../index.html">About</a>
+        <a class="nav-link" href="education.html">Education</a>
         <details class="nav-details" open>
           <summary class="nav-link is-active">Experience ▾</summary>
           <div class="nav-dropdown">
             <a class="nav-dropdown-link is-active" href="experience-professional.html">Professional</a>
-            <a class="nav-dropdown-link " href="experience-academic.html">Academic</a>
-            <a class="nav-dropdown-link " href="experience-publications.html">Publications</a>
+            <a class="nav-dropdown-link" href="experience-academic.html">Academic</a>
+            <a class="nav-dropdown-link" href="experience-publications.html">Publications</a>
           </div>
         </details>
-        <a class="nav-link " href="awards.html">Awards</a>
-        <a class="nav-link " href="certifications.html">Certifications</a>
-        <a class="nav-link " href="organizations.html">Organizations</a>
+        <a class="nav-link" href="awards.html">Awards</a>
+        <a class="nav-link" href="certifications.html">Certifications</a>
+        <a class="nav-link" href="organizations.html">Organizations</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="container exp-page">
+  <main id="main" class="container">
     <section class="page-head">
       <p class="page-eyebrow">ePortfolio</p>
       <h1 class="page-title">Professional Experience</h1>
     </section>
-    <section class="card">
-      <div class="exp-grid">
 
-        <article class="exp-card">
-          <img class="exp-img" src="../assets/exp-tech2.jpg" alt="Technical Specialist II at LUMA Energy" />
-          <div class="exp-body">
-            <h2 class="exp-title">Technical Specialist II</h2>
-            <p class="exp-meta"><strong>LUMA Energy</strong> · Engineering &amp; Asset Management<br>Jan 2025 – Present · Santurce, PR</p>
-            <ul class="exp-list">
+    <section class="card">
+      <div class="prof-list">
+
+        <!-- 1. Technical Specialist II -->
+        <article class="prof-card">
+          <div class="prof-img-wrap">
+            <img src="../assets/exp-tech2.jpg" alt="Technical Specialist II at LUMA Energy" />
+          </div>
+          <div class="prof-body">
+            <h2 class="prof-title">Technical Specialist II</h2>
+            <p class="prof-meta">
+              <strong>LUMA Energy</strong> · Engineering &amp; Asset Management<br>
+              Jan 2025 – Present · Santurce, PR
+            </p>
+            <ul class="prof-list-items">
               <li>Serve as a member of the reliability and protection engineering team responsible for defining protection strategies and reliability-driven recommendations for Puerto Rico's distribution system.</li>
               <li>Act as technical lead for the cFCI deployment program, defining methodologies, device model selection criteria, and deployment strategies for an island-wide rollout of devices.</li>
               <li>Complete protection coordination studies using Synergi Electric and Excel-based TCC tools, ensuring device coordination and compliance with protection standards.</li>
@@ -60,12 +146,18 @@
           </div>
         </article>
 
-        <article class="exp-card">
-          <img class="exp-img" src="../assets/exp-jr.jpg" alt="Jr. Technical Specialist at LUMA Energy" />
-          <div class="exp-body">
-            <h2 class="exp-title">Jr. Technical Specialist</h2>
-            <p class="exp-meta"><strong>LUMA Energy</strong> · Engineering &amp; Asset Management<br>Jan 2023 – Jan 2025 · San Sebastián, PR</p>
-            <ul class="exp-list">
+        <!-- 2. Jr. Technical Specialist -->
+        <article class="prof-card">
+          <div class="prof-img-wrap">
+            <img src="../assets/exp-jr.jpg" alt="Jr. Technical Specialist at LUMA Energy" />
+          </div>
+          <div class="prof-body">
+            <h2 class="prof-title">Jr. Technical Specialist</h2>
+            <p class="prof-meta">
+              <strong>LUMA Energy</strong> · Engineering &amp; Asset Management<br>
+              Jan 2023 – Jan 2025 · San Sebastián, PR
+            </p>
+            <ul class="prof-list-items">
               <li>Performed reliability and protection studies on distribution feeders to support grid modernization initiatives and improve automation readiness.</li>
               <li>Executed preliminary coordination and load flow analyses using Synergi Electric and Excel, improving protection accuracy and constructability of recommended solutions.</li>
               <li>Managed configuration and supported maintenance activities for automation devices, including IntelliRupter and TripSaver units.</li>
@@ -73,12 +165,18 @@
           </div>
         </article>
 
-        <article class="exp-card">
-          <img class="exp-img" src="../assets/exp-intern.jpg" alt="Co-op & Internship at LUMA Energy" />
-          <div class="exp-body">
-            <h2 class="exp-title">Co-op &amp; Internship</h2>
-            <p class="exp-meta"><strong>LUMA Energy</strong> · Engineering &amp; Asset Management<br>May 2022 – Jan 2023 · Santurce, PR</p>
-            <ul class="exp-list">
+        <!-- 3. Co-op & Internship -->
+        <article class="prof-card">
+          <div class="prof-img-wrap">
+            <img src="../assets/exp-intern.jpg" alt="Co-op & Internship at LUMA Energy" />
+          </div>
+          <div class="prof-body">
+            <h2 class="prof-title">Co-op &amp; Internship</h2>
+            <p class="prof-meta">
+              <strong>LUMA Energy</strong> · Engineering &amp; Asset Management<br>
+              May 2022 – Jan 2023 · Santurce, PR
+            </p>
+            <ul class="prof-list-items">
               <li>Verified automation and fuse placements using GIS and Excel, producing feasibility assessments and technical recommendations.</li>
               <li>Supported commissioning and configuration of automation devices, improving field readiness and data accuracy.</li>
               <li>Reviewed feeder models and recommendations for design consistency and correct siting of protection and automation devices.</li>
@@ -88,11 +186,13 @@
 
       </div>
     </section>
+
     <footer class="footer">
       <small>© <span class="year"></span> Eiden O. Garcia Torres</small>
       <small>Electrical Engineer · Puerto Rico</small>
     </footer>
   </main>
+
   <script>
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.year').forEach(function(el) {
@@ -123,6 +223,6 @@
       if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
     });
   });
-</script>
+  </script>
 </body>
 </html>
