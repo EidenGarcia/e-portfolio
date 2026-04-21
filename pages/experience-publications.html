@@ -22,19 +22,19 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
-        <a class="nav-link " href="../index.html">About</a>
-        <a class="nav-link " href="education.html">Education</a>
+        <a class="nav-link" href="../index.html">About</a>
+        <a class="nav-link" href="education.html">Education</a>
         <details class="nav-details" open>
           <summary class="nav-link is-active">Experience ▾</summary>
           <div class="nav-dropdown">
-            <a class="nav-dropdown-link " href="experience-professional.html">Professional</a>
-            <a class="nav-dropdown-link " href="experience-academic.html">Academic</a>
+            <a class="nav-dropdown-link" href="experience-professional.html">Professional</a>
+            <a class="nav-dropdown-link" href="experience-academic.html">Academic</a>
             <a class="nav-dropdown-link is-active" href="experience-publications.html">Publications</a>
           </div>
         </details>
-        <a class="nav-link " href="awards.html">Awards</a>
-        <a class="nav-link " href="certifications.html">Certifications</a>
-        <a class="nav-link " href="organizations.html">Organizations</a>
+        <a class="nav-link" href="awards.html">Awards</a>
+        <a class="nav-link" href="certifications.html">Certifications</a>
+        <a class="nav-link" href="organizations.html">Organizations</a>
       </nav>
     </div>
   </header>
@@ -44,6 +44,8 @@
       <p class="page-eyebrow">ePortfolio</p>
       <h1 class="page-title">Publications</h1>
     </section>
+
+    <!-- Publication 1: Monarca -->
     <section class="card">
       <article class="pub-item">
         <div class="pub-grid">
@@ -73,11 +75,53 @@
         </div>
       </article>
     </section>
+
+    <!-- Publication 2: RETRO -->
+    <section class="card">
+      <article class="pub-item">
+        <div class="pub-grid">
+          <div class="pub-left">
+            <h2 class="pub-title">Remote Tandem Robots (RETRO): Remote Operations and Experiments on Robots Using the Cloud</h2>
+            <p class="pub-meta">Pari Shah · <strong>Eiden Garcia</strong> · Iyinoluwa Tugbobo<br>
+            Mentor: Bhagirath Tallapragada &nbsp;·&nbsp; Faculty Advisor: Dr. Ashwin Ashok</p>
+            <div class="pub-block">
+              <p class="pub-label">Affiliation</p>
+              <ul class="pub-list">
+                <li>Georgia State University · REU Site: Smart and Autonomous Systems</li>
+                <li>National Science Foundation — Research Experiences for Undergraduates</li>
+              </ul>
+            </div>
+            <div class="pub-block">
+              <p class="pub-label">Project Overview</p>
+              <p class="pub-text">RETRO is a proof-of-concept for a reliable cloud robotic system that blends individual robotic capabilities with real-time coordination for a shared mission. The system addresses communication challenges in cloud robotics that can obstruct coordination between remote robots — critical for applications such as search and rescue in disaster scenarios.</p>
+            </div>
+            <div class="pub-block">
+              <p class="pub-label">Technical Highlights</p>
+              <ul class="pub-list">
+                <li><strong>Hardware:</strong> NVIDIA Waveshare JetBot AI kit — Jetson Nano 2GB, 2 DC motors, 8MP camera (1280×720 px, 160° FOV), PiOLED display.</li>
+                <li><strong>Object Detection:</strong> SSD MobileNet-v2 model with ArUco markers for target and grid perimeter identification.</li>
+                <li><strong>System Architecture:</strong> Three verticals — Cloud Communication, Sensory Data Management, and Mission Coordination — synchronized through a central Linux cloud server.</li>
+                <li><strong>Contribution:</strong> Developed and tested mission coordination logic and cloud-based framework for synchronized remote experimentation across multiple JetBots.</li>
+              </ul>
+            </div>
+            <div class="pub-actions">
+              <a class="btn btn-ghost" href="../assets/publications/retro-poster.png" target="_blank" rel="noopener">↓ View Full Poster</a>
+              <a class="btn" href="https://www.youtube.com/watch?v=_XKjZ5PoYlU&feature=youtu.be" target="_blank" rel="noopener">▶ Watch Demo Video</a>
+            </div>
+          </div>
+          <div class="pub-right">
+            <img class="pub-cover" src="../assets/publications/retro-poster.png" alt="RETRO Remote Tandem Robots research poster" />
+          </div>
+        </div>
+      </article>
+    </section>
+
     <footer class="footer">
       <small>© <span class="year"></span> Eiden O. Garcia Torres</small>
       <small>Electrical Engineer · Puerto Rico</small>
     </footer>
   </main>
+
   <script>
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.year').forEach(function(el) {
@@ -108,6 +152,6 @@
       if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
     });
   });
-</script>
+  </script>
 </body>
 </html>
